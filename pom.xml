@@ -11,7 +11,6 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    
     <tomcat.version>8.5.38</tomcat.version>
     <jsf.version>2.2.10</jsf.version>
     <primefaces.version>7.0</primefaces.version>
@@ -53,7 +52,7 @@
 		<artifactId>jsf-impl</artifactId>
 		<version>${jsf.version}</version>
 	</dependency>
-    
+	
     <!-- Primefaces -->
 	<dependency>
 	    <groupId>org.primefaces</groupId>
@@ -82,12 +81,31 @@
 		<artifactId>hibernate-core</artifactId>
 		<version>5.2.6.Final</version>
 	</dependency>
+	<!-- jaxb parser persistence.xml-->
+	<!-- API, java.xml.bind module -->
+	<dependency>
+	    <groupId>jakarta.xml.bind</groupId>
+	    <artifactId>jakarta.xml.bind-api</artifactId>
+	    <version>2.3.2</version>
+	</dependency>
 	
-	<!-- SQLITE  -->
+	<!-- H2 JDBC -->
     <dependency>
-	    <groupId>org.xerial</groupId>
-	    <artifactId>sqlite-jdbc</artifactId>
-	    <version>${sqlite.version}</version>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>1.4.200</version>
+    </dependency>
+
+	<!-- CDI -->
+	<dependency>
+	    <groupId>javax.enterprise</groupId>
+	    <artifactId>cdi-api</artifactId>
+	    <version>2.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.openwebbeans</groupId>
+	    <artifactId>openwebbeans-jsf</artifactId>
+	    <version>2.0.20</version>
 	</dependency>
 	
   </dependencies>

@@ -5,6 +5,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.WebResourceSet;
@@ -55,7 +57,21 @@ public class Main {
         } else {
             resourceSet = new EmptyResourceSet(resources);
         }
+        
         resources.addPreResources(resourceSet);
+        
+        // META-INF
+        // additionWebInfClassesFolder <-external
+        // webContentFolder <- internal
+        File metaINFFolderInternal = new File(webContentFolder.getAbsolutePath(), "/META-INF");
+        System.out.println(metaINFFolderInternal.getAbsolutePath());
+        
+        File metaINFFolderExternal = new File(additionWebInfClassesFolder.getAbsolutePath(), "/META-INF");
+        System.out.println(metaINFFolderExternal.getAbsolutePath());
+        
+        Files.copy(Paths.get(metaINFFolderInternal.getAbsolutePath(),"persistence.xml"),
+        		Paths.get(metaINFFolderExternal.getAbsolutePath(), "persistence.xml"), StandardCopyOption.REPLACE_EXISTING);
+        
         ctx.setResources(resources);
 
         tomcat.start();

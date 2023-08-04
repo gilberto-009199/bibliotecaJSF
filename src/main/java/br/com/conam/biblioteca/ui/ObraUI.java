@@ -22,11 +22,12 @@ public class ObraUI implements Serializable{
 	
 	@Inject
     public ObraService obraService;
-    
+
     public List<ObraEntity> listObra;
-    
-    
-    
+
+    public ObraEntity obra;
+
+    public void salvar() {    }
     
     @PostConstruct
     public void init() { this.listObra = obraService.getAll(); }
@@ -34,4 +35,12 @@ public class ObraUI implements Serializable{
 	public List<ObraEntity> getListObra() { return listObra;	}
 	public void setListObra(List<ObraEntity> listAutor) { this.listObra = listAutor;	}
 
+	public ObraEntity getObra() {
+		return obra;
+	}
+
+	public void setObra(ObraEntity obra) {
+		this.obra = obra;
+	}
+	
 }

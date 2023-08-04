@@ -1,5 +1,6 @@
 package br.com.conam.biblioteca.domain.entities;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,9 +18,9 @@ public class ObraEntity extends BaseEntity{
     @Column(length = 240, nullable = false)
     private String descricao;
 
-    private String dataPublicacao;
+    private Calendar dataPublicacao;
 
-    private String dataExposicao;
+    private Calendar dataExposicao;
 
     @ManyToMany
     private List<AutorEntity> autores;
@@ -40,19 +41,19 @@ public class ObraEntity extends BaseEntity{
 		this.descricao = descricao;
 	}
 
-	public String getDataPublicacao() {
+	public Calendar getDataPublicacao() {
 		return dataPublicacao;
 	}
 
-	public void setDataPublicacao(String dataPublicacao) {
+	public void setDataPublicacao(Calendar dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
 	}
 
-	public String getDataExposicao() {
+	public Calendar getDataExposicao() {
 		return dataExposicao;
 	}
 
-	public void setDataExposicao(String dataExposicao) {
+	public void setDataExposicao(Calendar dataExposicao) {
 		this.dataExposicao = dataExposicao;
 	}
 

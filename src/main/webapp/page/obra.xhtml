@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-	<head>
-	    <title>JSF Example</title>
-	</head>
+<html lang="pt"
+ 	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	    <title>Adicionar um Autor</title>
+	</h:head>
 	<h:body>
-	
-	    <h1>Obras</h1>
-	    
+	    <h:form>
+	   		<p:messages id="messages" />
+	   		<p:fieldset legend="Adic. Livro">
+		   		<p:panelGrid columns="2">
+		            <p:panelGrid columns="2">
+
+				        <h:outputLabel for="nome" value="Nome:" />
+				        <p:inputText name="nome" value="#{obraUI.obra.nome}" required="true" />
+						
+						<h:outputLabel for="descricao" value="Descrição" />
+						<p:inputTextarea  value="#{obraUI.obra.descricao}" />
+						
+						<h:outputLabel for="dataPublicacao" value="Data de Publicação:" />
+				        <p:calendar name="dataPublicacao" value="#{obraUI.obra.dataPublicacao}" required="true" />
+				        
+				        <h:outputLabel for="dataExposicao" value="Data de Exposição:" />
+				        <p:calendar name="dataExposicao" value="#{obraUI.obra.dataExposicao}" required="true" />
+						
+						<p:commandButton type="button" value="Cancelar" styleClass="ui-button-danger ui-button-flat" />
+				        <p:commandButton icon="pi pi-user-plus" value="Salvar" action="#{obraUI.salvar}" />
+				    </p:panelGrid>
+				    <p:fieldset legend="Autores">
+				        <p:selectManyMenu>
+				           	<f:selectItem itemLabel="Option 1" itemValue="Option 1"/>
+				            <f:selectItem itemLabel="Option 2" itemValue="Option 2"/>
+				            <f:selectItem itemLabel="Option 3" itemValue="Option 3"/>
+				        </p:selectManyMenu>
+				    </p:fieldset>
+				</p:panelGrid>
+	        </p:fieldset>
+		</h:form>
 	</h:body>
 </html>

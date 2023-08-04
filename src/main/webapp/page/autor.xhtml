@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-	<head>
-	    <title>JSF Example</title>
-	</head>
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	    <title>Adicionar um Autor</title>
+	</h:head>
 	<h:body>
-	    <h1>Autor</h1>
+	    <h:form>
+	   		<p:messages id="messages" />
+	   		<p:fieldset legend="Adic. Autor">
+		   		<p:panelGrid columns="2">
+		            <p:panelGrid columns="2">
+				        <h:outputLabel for="nome" value="Nome:" />
+				        <p:inputText name="nome" value="#{autorUI.autor.nome}" required="true" />
+				
+				        <h:outputLabel for="sexo" value="Sexo:" />
+				        <p:inputText name="sexo" value="#{autorUI.autor.sexo}" />
+				
+				        <h:outputLabel for="email" value="E-mail:" />
+				        <p:inputText name="email" value="#{autorUI.autor.email}" />
+				
+				        <h:outputLabel for="dataNascimento" value="Data de Nascimento:" />
+				        <p:calendar name="dataNascimento" value="#{autorUI.autor.dataNascimento}" required="true" />
+				
+				        <h:outputLabel for="paisOrigem" value="País de Origem:" />
+				        <p:inputText name="paisOrigem" value="#{autorUI.autor.paisOrigem}" required="true" />
+				
+				        <h:outputLabel for="cpf" value="CPF:" />
+				        <p:inputText name="cpf" value="#{autorUI.autor.cpf}" required="#{autorUI.autor.paisOrigem eq 'Brasil'}" />
+					
+						<p:commandButton type="button" value="Cancelar" styleClass="ui-button-danger ui-button-flat" />
+				        <p:commandButton icon="pi pi-user-plus" value="Salvar" action="#{autorUI.salvar}" />
+				    </p:panelGrid>
+				    <p:fieldset legend="Livros">
+				        <p:selectManyMenu>
+				           	<f:selectItem itemLabel="Option 1" itemValue="Option 1"/>
+				            <f:selectItem itemLabel="Option 2" itemValue="Option 2"/>
+				            <f:selectItem itemLabel="Option 3" itemValue="Option 3"/>
+				        </p:selectManyMenu>
+				    </p:fieldset>
+				</p:panelGrid>
+	        </p:fieldset>
+		</h:form>
 	</h:body>
 </html>

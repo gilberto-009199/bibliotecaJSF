@@ -69,6 +69,10 @@ public class Main {
         File metaINFFolderExternal = new File(additionWebInfClassesFolder.getAbsolutePath(), "/META-INF");
         System.out.println(metaINFFolderExternal.getAbsolutePath());
         
+        boolean notExistMetaThenCreateDiretory = Files.notExists(Paths.get(metaINFFolderExternal.getAbsolutePath()));
+        
+        if(notExistMetaThenCreateDiretory) Files.createDirectory( Paths.get(metaINFFolderExternal.getAbsolutePath()) );
+
         Files.copy(Paths.get(metaINFFolderInternal.getAbsolutePath(),"persistence.xml"),
         		Paths.get(metaINFFolderExternal.getAbsolutePath(), "persistence.xml"), StandardCopyOption.REPLACE_EXISTING);
         

@@ -27,8 +27,10 @@ public class ObraUI implements Serializable{
 
     public ObraEntity obra;
 
-    public void salvar() {    }
-    
+    public void create() {}
+    public void update() {}
+    public void remove() {}
+	
     @PostConstruct
     public void init() { this.listObra = obraService.getAll(); }
     

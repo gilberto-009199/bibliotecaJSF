@@ -29,9 +29,9 @@ public class AutorUI implements Serializable{
 
     private AutorEntity autor;
 
-    public void salvar() {
-        
-    }
+    public void create() {}
+    public void update() {}
+    public void remove() {}
 
     @PostConstruct
     public void init() { this.listAutor = autorService.getAll(); }

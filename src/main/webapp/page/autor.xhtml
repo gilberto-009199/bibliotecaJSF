@@ -31,7 +31,7 @@
 				        <p:inputText name="cpf" value="#{autorUI.autor.cpf}" required="#{autorUI.autor.paisOrigem eq 'Brasil'}" />
 					
 						<p:commandButton type="button" value="Cancelar" styleClass="ui-button-danger ui-button-flat" />
-				        <p:commandButton icon="pi pi-user-plus" value="Salvar" action="#{autorUI.salvar}" />
+				        <p:commandButton icon="pi pi-user-plus" value="Salvar" action="#{autorUI.create}" />
 				    </p:panelGrid>
 				    <p:fieldset legend="Livros">
 				        <p:selectManyMenu>

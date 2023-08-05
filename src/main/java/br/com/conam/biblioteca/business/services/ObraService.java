@@ -21,6 +21,10 @@ public class ObraService implements Serializable{
 	@Inject
 	public ObraRepository obraRepository;
 	
+	public void create() {}
+    public void update() {}
+    public void remove() {}
+
 	public List<ObraEntity> getAll() {
 		return obraRepository.findAll();
 	}

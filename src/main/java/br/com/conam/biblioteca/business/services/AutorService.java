@@ -19,6 +19,10 @@ public class AutorService implements Serializable{
 	@Inject
 	public AutorRepository autorRepository;
 	
+	public void create() {}
+    public void update() {}
+    public void remove() {}
+
 	public List<AutorEntity> getAll() {
 		return autorRepository.findAll();
 	}

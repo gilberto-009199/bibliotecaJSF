@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>login</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<fieldset style="margin-right: 20px; margin-left: 40px;">
+				<legend> Preencha os campos para cadastrar o login: </legend>
+				<h:outputText value="Username" />
+				<br></br>
+				<h:inputText id="username" value="#{loginUI.user}"></h:inputText>
+				<h:message for="username"></h:message>
+				<br></br>
+				
+				<h:outputText value="Password" />
+				<br></br>
+				<h:inputSecret id="password" value="#{loginUI.pwd}"></h:inputSecret>
+				<h:message for="password"></h:message>
+				<br></br>
+				
+				<h:outputText value="Password Repeat" />
+				<br></br>
+				<h:inputSecret id="passwordReset" value="#{loginUI.pwdRepet}"></h:inputSecret>
+				<h:message for="passwordReset"></h:message>
+				<br></br>
+				
+				<span style="color: black; font-weight: bold;">Já tem login?<a style="margin-left: 10px;"
+					href="${request.contextPath}/public/login.xhtml">Logar</a>
+				</span>
+				<h:commandButton action="#{loginUI.create}"
+					value="Login"/>
+			</fieldset>
+		</h:form>
+	</h:body>
+</html>

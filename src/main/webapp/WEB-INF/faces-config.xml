@@ -12,4 +12,12 @@
 		</exception-handler-factory>
 	</factory>
 	
+	<navigation-rule>
+		<from-view-id>/public/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logado</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 </faces-config>

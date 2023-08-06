@@ -18,29 +18,16 @@ import org.hibernate.annotations.CreationTimestamp;
 public class BaseEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false, unique = true, nullable = false)
-	private UUID id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "id")
+	public short id;
 
-	@Column(name="created_date", updatable = false)
-	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar createdDate;
-	
-	public UUID getId() {
+	public short getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(short id) {
 		this.id = id;
-	}
-
-	public Calendar getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Calendar createdDate) {
-		this.createdDate = createdDate;
 	}
 	
 }

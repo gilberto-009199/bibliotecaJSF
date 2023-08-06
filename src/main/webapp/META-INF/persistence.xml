@@ -8,13 +8,16 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>br.com.conam.biblioteca.domain.entities.AutorEntity</class>
         <class>br.com.conam.biblioteca.domain.entities.ObraEntity</class>
+        <class>br.com.conam.biblioteca.domain.entities.UserEntity</class>
+        
          <!-- Configuração do banco de dados H2 -->
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/test.db"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:./test.db"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
+        
     </persistence-unit>
 </persistence>

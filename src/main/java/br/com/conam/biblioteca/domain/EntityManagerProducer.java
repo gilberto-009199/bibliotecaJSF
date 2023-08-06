@@ -18,7 +18,6 @@ public class EntityManagerProducer {
     private static final String PERSISTENCE_UNIT_NAME = "default";
     
     @Produces
-    @Singleton
     public static EntityManager createEntityManager() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);

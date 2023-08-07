@@ -9,7 +9,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpSession;
-import javax.transaction.Transactional;
 
 import br.com.conam.biblioteca.business.services.LoginService;
 import br.com.conam.biblioteca.domain.entities.UserEntity;
@@ -27,7 +26,7 @@ public class LoginUI implements Serializable {
 	private String pwdRepet;
 	private String msg;
 	private String user;
-	@Transactional
+
 	public void create() {
     	if( pwd.equals(pwdRepet) ) {
     		

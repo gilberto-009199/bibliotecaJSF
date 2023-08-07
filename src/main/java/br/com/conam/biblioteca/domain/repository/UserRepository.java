@@ -47,7 +47,6 @@ public class UserRepository{
             return null; // Usuário não encontrado
         }
     }
-
 	@Transactional
 	public UserEntity save(UserEntity userEntity) {
 

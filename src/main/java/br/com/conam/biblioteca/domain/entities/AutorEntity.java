@@ -9,7 +9,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
-@Entity
 public class AutorEntity extends BaseEntity{
 
 	@Column(nullable = false)

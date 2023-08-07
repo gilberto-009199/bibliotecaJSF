@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import javax.transaction.Transactional;
 
 import br.com.conam.biblioteca.domain.entities.UserEntity;
 import br.com.conam.biblioteca.domain.repository.UserRepository;
@@ -18,7 +17,7 @@ public class LoginService implements Serializable{
 
 	@Inject
 	public UserRepository userRepository;
-	@Transactional
+	
 	public UserEntity create(String user, String password) {
 		
 		//UserEntity entity = userRepository.findByUsername(user);

@@ -20,7 +20,10 @@ public class EntityManagerProducer {
     @Produces
     public static EntityManager createEntityManager() {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        Map properties = new HashMap<String,String>();
+    	
+    	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME, properties);
+         
         
         return	entityManagerFactory.createEntityManager();
     }

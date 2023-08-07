@@ -1,5 +1,6 @@
 package br.com.conam.biblioteca.domain.entities;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -7,20 +8,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-public class UserEntity{
+@Table
+public class UserEntity implements Serializable{
+	
+	
+	private static final long serialVersionUID = -5477586229043422522L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	public short id;
+	@SequenceGenerator(name = "ENTIDADE_ID_SEQ", sequenceName = "entidade_id_entidade_seq", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ENTIDADE_ID_SEQ")
+	@Column(name = "id_entidade")
+	private Long id;
 
-	public short getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(short id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -45,5 +53,5 @@ public class UserEntity{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 }
